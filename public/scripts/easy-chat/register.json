@@ -1,0 +1,88 @@
+{
+  "ui_elements": {
+    "dialogue_box": {
+      "style": "default",
+      "panel_height_ratio": 0.33,
+      "side_margin": "15%"
+    },
+    "name_tag": {
+      "mode": "inline"
+    },
+    "choice_button": {
+      "style": "default",
+      "height": 64,
+      "spacing": 14,
+      "font_size": 28
+    },
+    "control_bar": {
+      "position": "top_left",
+      "margin": 20,
+      "spacing": 12
+    },
+    "custom_buttons": [
+      { "id": "ec_shop_btn", "style": "default", "label": "商店", "size": 56, "signal": "open_shop" },
+      { "id": "ec_bag_btn", "style": "default", "label": "背包", "size": 56, "signal": "open_bag" }
+    ]
+  },
+  "characters": [
+    {
+      "id": "alice",
+      "display_name": "爱丽丝",
+      "name_color": "#FF6B9D",
+      "sprites": {
+        "default": "Textures/Characters/alice/default.png",
+        "happy": "Textures/Characters/alice/happy.png",
+        "sad": "Textures/Characters/alice/sad.png",
+        "surprised": "Textures/Characters/alice/surprised.png"
+      },
+      "default_expression": "default",
+      "default_position": "center",
+      "scale": 1.0,
+      "offset": { "x": 0, "y": 0 }
+    },
+    {
+      "id": "bob",
+      "display_name": "鲍勃",
+      "name_color": "#6BB5FF",
+      "sprites": {
+        "default": "Textures/Characters/bob/default.png",
+        "happy": "Textures/Characters/bob/happy.png",
+        "sad": "Textures/Characters/bob/sad.png"
+      },
+      "default_expression": "default",
+      "default_position": "right",
+      "scale": 1.0,
+      "offset": { "x": 0, "y": 0 }
+    },
+    {
+      "id": "narrator",
+      "display_name": "",
+      "is_narrator": true,
+      "sprites": {}
+    }
+  ],
+  "scenes": [
+    { "id": "bg_classroom", "type": "background", "image": "Textures/Scenes/classroom.png", "transition": "fade" },
+    { "id": "bg_campus", "type": "background", "image": "Textures/Scenes/campus.png", "transition": "fade" },
+    { "id": "cg_confession", "type": "cg", "image": "Textures/Scenes/confession_cg.png", "transition": "fade", "duration": 2.0 }
+  ],
+  "audios": [
+    { "id": "bgm_daily", "type": "bgm", "file": "Audio/BGM/daily_life.ogg", "loop": true, "volume": 0.7 },
+    { "id": "bgm_sad", "type": "bgm", "file": "Audio/BGM/sad.ogg", "loop": true, "volume": 0.5 },
+    { "id": "sfx_door_open", "type": "sfx", "file": "Audio/SFX/door_open.ogg", "volume": 1.0 },
+    { "id": "sfx_click", "type": "sfx", "file": "Audio/SFX/click.ogg", "volume": 0.8 }
+  ],
+  "decorations": [
+    { "id": "vignette", "image": "Textures/UI/decor_vignette.png", "description": "暗角" },
+    { "id": "snow", "image": "Textures/UI/decor_snow.png", "description": "飘雪" }
+  ],
+  "variables": {
+    "affection_alice": 0,
+    "met_bob": false,
+    "last_word": "你好"
+  },
+  "flags": [
+    "gave_gift",
+    "saw_cg_confession"
+  ]
+}

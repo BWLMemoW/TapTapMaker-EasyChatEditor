@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+EasyChatBoxEditor.exe
+pack/Program.generated.cs

@@ -1,0 +1,38 @@
+# ===== 第 1 章：相遇 =====
+@scene bg_classroom fade 1.0
+@show alice default center slide_left
+@wait 0.6
+alice:"你好，我是爱丽丝。"
+*夕阳洒进教室，她笑着向你打招呼。
+
+@choice
+- "你好呀！" >> say_hi
+- "抱歉，我在忙……" >> say_busy
+@timeout 8 >> say_timeout
+@end
+
+> say_hi
+@set affection_alice +1
+alice(happy):"很高兴认识你！[color=#FF6B9D]今天天气真好！[/color]"
+>> after_choice
+
+> say_busy
+alice(sad):"那……下次再聊吧。"
+>> after_choice
+
+> say_timeout
+*你沉默不语。
+>> after_choice
+
+> after_choice
+@if affection_alice >= 1
+    alice:"看来我们已经是朋友了。"
+@else
+    alice:"希望下次能多说几句。"
+@endif
+
+@bgm bgm_daily 0.7
+@sfx sfx_door_open
+@signal quest_start
+@wait 0.5
+@end

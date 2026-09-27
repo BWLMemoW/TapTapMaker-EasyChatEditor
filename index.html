@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy-ChatBox DSL 编辑器</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="toolbar">
+        <div class="toolbar-group">
+          <button id="btn-new" title="新建 (Ctrl+N)">新建</button>
+          <button id="btn-open" title="打开 (Ctrl+O)">打开</button>
+          <button id="btn-save" title="保存 (Ctrl+S)">保存</button>
+          <button id="btn-save-as" title="另存为">另存为</button>
+        </div>
+        <div class="toolbar-group">
+          <button id="btn-undo" title="撤销 (Ctrl+Z)">撤销</button>
+          <button id="btn-redo" title="重做 (Ctrl+Y)">重做</button>
+          <button id="btn-find" title="查找 (Ctrl+F)">查找</button>
+          <button id="btn-reload-current" title="从本地重新加载当前文件 (Ctrl+Alt+R)">重新加载</button>
+        </div>
+        <div class="toolbar-group zoom-group">
+          <button id="btn-zoom-out" title="缩小字号 (Ctrl+-)">A−</button>
+          <span id="zoom-level" class="zoom-level" title="当前字号缩放">100%</span>
+          <button id="btn-zoom-in" title="放大字号 (Ctrl+=)">A+</button>
+          <button id="btn-zoom-reset" title="重置字号 (Ctrl+0)">100%</button>
+        </div>
+        <div class="toolbar-group">
+          <button id="btn-reload-register" title="重新加载当前注册文件">刷新注册表</button>
+          <button id="btn-pick-register" title="选择或导入 register.json">选择/导入注册文件</button>
+          <input id="register-file-input" type="file" accept=".json,application/json" style="display:none" />
+        </div>
+        <div class="toolbar-spacer"></div>
+        <span id="register-status" class="status-chip">register.json：加载中…</span>
+      </header>
+
+      <div id="tab-bar" class="tab-bar"></div>
+
+      <main class="main-area">
+        <aside id="resource-panel" class="left-panel"></aside>
+        <section id="editor-host" class="editor-host"></section>
+        <aside id="diagnostic-panel" class="right-panel">
+          <div class="panel-header">诊断</div>
+          <div id="diagnostic-list" class="diagnostic-list"></div>
+        </aside>
+      </main>
+
+      <footer class="status-bar">
+        <span id="status-file">未命名.txt</span>
+        <span id="status-pos">行 1，列 1</span>
+        <span id="status-register">register.json：未加载</span>
+        <span id="status-story" title="剧情文本字数与预计游玩时长（仅统计对话、旁白、选项文本）">剧情 0 字</span>
+        <span id="status-errors">错误 0 · 警告 0</span>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
